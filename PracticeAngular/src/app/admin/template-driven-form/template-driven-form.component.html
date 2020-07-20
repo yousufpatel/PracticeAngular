@@ -1,0 +1,86 @@
+<br>
+<h4>
+    Template Driven From Example {{firstname}}
+   
+  </h4>
+<div class="col-xl-6 mx-auto">
+
+    <div>{{msg}}</div>
+<form #myform="ngForm" novalidate="novalidate">
+            <div class="form-group">
+              <label for="MyFirstName" class="col-sm-4 col-form-label">First Name</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="First Name" class="form-control" id="MyFirstName" name="MyFirstName" [(ngModel)]="firstname" #MyFirstName="ngModel" required="required" minlength="3" maxlength="30" pattern="^[A-Za-z0-9 /-]*$">
+                <span class="text-danger" *ngIf="MyFirstName.invalid && (MyFirstName.dirty || MyFirstName.touched || myform.submitted) &&  MyFirstName.errors?.required">First Name Can't be left blank</span>               
+                <span class="text-danger" *ngIf="MyFirstName.invalid && (MyFirstName.dirty || MyFirstName.touched || myform.submitted) && MyFirstName.errors?.pattern">Project Name can contain alphabets, digits, dot, hyphen or space only</span>
+
+                <span class="text-danger" *ngIf="MyFirstName.invalid && (MyFirstName.dirty || MyFirstName.touched || myform.submitted) && MyFirstName.errors?.minlength">Project name should be at least 3 characters long</span>
+                
+              </div>
+            </div>   
+            
+            <div class="form-group">
+                <label for="MyLastName" class="col-sm-4 col-form-label">Last Name</label>
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Last Name" class="form-control" id="MyLastName" name="MyLastName" [(ngModel)]="lastname" #MyLastName="ngModel" required="required">
+                  <span class="text-danger" *ngIf="MyLastName.invalid && (MyLastName.dirty || MyLastName.touched || myform.submitted) && MyLastName.errors?.required">Last Name Can't be left blank</span>
+              </div>
+              </div> 
+
+              <div class="form-group">
+                <label for="MyEmail" class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Email" class="form-control"  id="MyEmail"  name="MyEmail" [(ngModel)]="email" #MyEmail="ngModel" required="required">
+                  <span class="text-danger" *ngIf="MyEmail.invalid && (MyEmail.dirty || MyEmail.touched || myform.submitted) && MyEmail.errors?.required">Email Can't be left blank</span>
+              </div>
+              </div> 
+
+              <div class="form-group">
+                <label for="MyEmail" class="col-sm-4 col-form-label">Amount</label>
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Amount" class="form-control"  id="MyAmount" name="MyAmount" [(ngModel)]="amount" #MyAmount="ngModel" required="required">
+                  <span class="text-danger" *ngIf="MyAmount.invalid && (MyAmount.dirty || MyAmount.touched || myform.submitted) && MyAmount.errors?.required">Amount Can't be left blank</span>
+              </div>
+              </div> 
+
+              <div class="form-group row">
+                <label for="rbNewStatusInForce" class="col-sm-4">Gender</label>
+                <div class="col-sm-8">
+    
+                  <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" value="Male"     id="MyGender"  name="MyGender" [(ngModel)]="gender" #MyGender="ngModel" required="required">
+                    <label for="MyGender" class="form-check-label">Male</label>
+                  </div>
+    
+                  <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" value="Fe Male"  id="MyGender"  name="MyGender" [(ngModel)]="gender" #MyGender="ngModel" required="required">
+                    <label for="MyGender" class="form-check-label">Female</label>
+                  </div>
+                  
+                  <span class="text-danger" *ngIf="MyGender.invalid && (MyGender.dirty || MyGender.touched || myform.submitted) && MyGender.errors?.required">Please choose a Gender</span>
+                 
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="MyCountry" class="col-sm-4 col-form-label">Country</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="MyCountry" name="MyCountry" [(ngModel)]="country" #MyCountry="ngModel" required="required">
+                      <option value="">--Please Choose Country--</option>
+                      <option value="India">India</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                  </select>
+                  <span class="text-danger" *ngIf="MyCountry.invalid && (MyCountry.dirty || MyCountry.touched || myform.submitted) && MyCountry.errors?.required">Please select a country</span>
+              </div>
+              </div>
+              <div>
+                <button class="btn btn-primary" (click)="onRegisterClick(myform)">Save</button>&nbsp;&nbsp;
+                <button class="btn btn-danger" (click)="resetForm(myform)">Reset</button>
+              </div>
+             
+  </form>
+</div>
+
+  

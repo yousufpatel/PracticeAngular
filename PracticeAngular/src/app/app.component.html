@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+    <a class="navbar-brand" href="#">
+        {{title}} 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynav">
+        <ul class="navbar-nav mr-auto">
+         
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="templatedrivenform">Template Driven Form</a>
+                  <a class="dropdown-item" routerLink="ForLoopDemo">For Loop Demo</a>
+                  <a class="dropdown-item" routerLink="company">Input Output decorator demo</a>
+                  <a class="dropdown-item" routerLink="viewchilddemo">viewchilddemo</a>
+                  
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="search"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button class="btn btn-warning my2- my-sm-0" type="button">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
